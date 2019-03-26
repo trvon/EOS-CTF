@@ -1,4 +1,13 @@
 version: '3'
 services:
+    server:
+        build:
+            context: ./
+            args:
+                SSH_MASTER_USER: hacker
+                SSH_MASTER_PASS: purple
+        hostname: linux
+        ports:
+            - "2222:22"
     debian:
         image: "debian"
